@@ -90,7 +90,7 @@ where
     T: FromStr,
     <T as FromStr>::Err: ::std::fmt::Debug,
 {
-    static WHITESPACES: &[u8] = b"\t\r\n ";
+    static WHITESPACES: &[u8] = b"\r\n";
     let raw: Vec<u8> = match next {
         Some(c) => iter.take_while(|&ch| ch != c).collect(),
         None => iter
